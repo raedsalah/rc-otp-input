@@ -1,24 +1,22 @@
-import React, { useEffect, useRef } from "react";
-
-const inputTypeNames = ['password', 'text'] as const;
+import React, { useEffect, useRef } from "react"
 
 interface SingleOtpProps {
-    isInvalid: boolean;
-    autoFocus: boolean;
-    value: string
-    type: "passowrd" | "text";
-    isNum: boolean;
-    index: number;
-    focus: boolean;
-    onChange: () => void;
-    onInput: () => void;
+    isInvalid?: boolean;
+    autoFocus?: boolean;
+    value?: string
+    type?: "text" | "password";
+    isNum?: boolean;
+    index?: number;
+    focus?: boolean;
+    onInput: (e: any) => void;
     separator: boolean;
-    customSeparator: string;
-    onKeyDown: () => void;
-    onFocus: () => void;
+    customSeparator?: string;
+    onKeyDown: (e: any) => void;
+    onFocus: (e: any) => void;
     onBlur: () => void;
-    disabled: boolean;
-    onPaste: () => void
+    disabled?: boolean;
+    onPaste: (e: any) => void
+    autoComplete: 'off' | 'on'
 }
 
 const SingleOtpInput = ({
@@ -27,7 +25,6 @@ const SingleOtpInput = ({
     type,
     isNum = false,
     focus = false,
-    onChange,
     separator = false,
     customSeparator,
     onFocus,
@@ -37,6 +34,7 @@ const SingleOtpInput = ({
     onBlur,
     disabled,
     onPaste,
+    autoComplete = 'off',
     ...props
 }: SingleOtpProps) => {
     //input ref
@@ -51,11 +49,10 @@ const SingleOtpInput = ({
         <>
             <input
                 value={value ? value : ""}
-                autoComplete="off"
+                autoComplete={autoComplete}
                 maxLength={1}
                 type={type}
                 inputMode={isNum ? "numeric" : "text"}
-                onChange={onChange}
                 onInput={onInput}
                 onFocus={onFocus}
                 autoFocus={autoFocus}
