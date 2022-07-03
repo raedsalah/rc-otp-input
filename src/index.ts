@@ -1,1 +1,1 @@
-export { default as Otp } from "./Otp";
+export { default as Otp } from "./lib";
