@@ -1,0 +1,9 @@
+/.github
+/src
+.all-contributorsrc
+.babelrc.json
+.eslintignore
+.eslintrc.json
+.prettierignore
+.prettierrc.json
+.rollup.config.js
