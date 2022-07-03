@@ -1,11 +1,11 @@
 {
   "name": "rc-otp-input",
   "version": "0.1.0",
-  "description": "Easily customizable react OTP web input",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/raedsalah/rc-otp-input"
-  },
+  "description": "Easily customizable light react OTP web input",
+  "main": "dist/cjs/index.js",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "React",
     "OTP",
@@ -22,19 +22,23 @@
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.3.3",
     "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
     "react": "^18.2.0",
     "rollup": "^2.75.7",
     "rollup-plugin-dts": "^4.2.2",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4"
   },
-  "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "files": [
-    "dist"
-  ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raedsalah/rc-otp-input"
+  },
+  "bugs": {
+    "url": "https://github.com/raedsalah/rc-otp-input/issues"
   },
   "types": "dist/index.d.ts"
 }
