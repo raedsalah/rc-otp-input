@@ -1,12 +1,22 @@
 {
   "name": "rc-otp-input",
-  "version": "0.0.1",
-  "description": "Easily customizable OTP web input",
+  "version": "0.1.0",
+  "description": "Easily customizable react OTP web input",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raedsalah/rc-otp-input"
+  },
+  "keywords": [
+    "React",
+    "OTP",
+    "one time password",
+    "component"
+  ],
   "scripts": {
     "rollup": "rollup -c"
   },
-  "author": "Raed Salah",
-  "license": "ISC",
+  "author": "Raed Salah <contact@raedsalah.com>",
+  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
@@ -23,5 +33,8 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "types": "dist/index.d.ts"
 }
