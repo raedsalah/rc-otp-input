@@ -14,7 +14,9 @@
   ],
   "scripts": {
     "rollup": "rollup -c",
-    "dev": "webpack-dev-server --mode=development"
+    "dev": "webpack-dev-server --mode=development",
+    "build": "npm run clean && mkdir dist && tsc && cp package.json README.md ./dist",
+    "clean": "rm -rf dist"
   },
   "author": "Raed Salah <contact@raedsalah.com>",
   "license": "MIT",
@@ -63,5 +65,8 @@
     "@types/react-dom": "^18.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "@types/estree": "0.0.47"
   }
 }
