@@ -1,11 +1,16 @@
 {
   "name": "rc-otp-input",
-  "version": "0.1.0",
-  "description": "Easily customizable react OTP web input",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/raedsalah/rc-otp-input"
-  },
+  "version": "0.1.5",
+  "description": "Easily customizable light react OTP web input",
+  "main": "index.js",
+  "files": [
+    "index.d.ts",
+    "Otp.d.ts",
+    "Otp.js",
+    "OtpSingleInput.d.ts",
+    "OtpSingleInput.js",
+    "tsconfig.tsbuildinfo"
+  ],
   "keywords": [
     "React",
     "OTP",
@@ -13,28 +18,51 @@
     "component"
   ],
   "scripts": {
-    "rollup": "rollup -c"
+    "dev": "webpack-dev-server --mode=development",
+    "build": "npm run clean && mkdir dist && tsc && cp package.json README.md ./dist",
+    "clean": "rm -rf dist"
   },
   "author": "Raed Salah <contact@raedsalah.com>",
   "license": "MIT",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^22.0.0",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-typescript": "^8.3.3",
-    "@types/react": "^18.0.14",
+    "@babel/core": "^7.18.6",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.5",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "path": "^0.12.7",
     "react": "^18.2.0",
-    "rollup": "^2.75.7",
-    "rollup-plugin-dts": "^4.2.2",
+    "react-dom": "^18.2.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.3.1",
     "tslib": "^2.4.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3",
+    "@types/estree": "0.0.47"
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "files": [
-    "dist"
-  ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "types": "dist/index.d.ts"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raedsalah/rc-otp-input"
+  },
+  "bugs": {
+    "url": "https://github.com/raedsalah/rc-otp-input/issues"
+  },
+  "types": "index.d.ts",
+  "peerDependencies": {
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }

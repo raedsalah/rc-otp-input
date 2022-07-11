@@ -19,7 +19,7 @@ npm install --save rc-otp-input
 or if you are using yarn :
 
 ```bash
-yarn add react-modern-drawer
+yarn add rc-otp-input
 ```
 
 ## Usage:
