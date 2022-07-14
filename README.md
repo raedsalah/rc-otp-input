@@ -1,4 +1,4 @@
-# otp-input-react
+# rc-otp-input
 
 A fully customizable otp component.
 
@@ -44,11 +44,7 @@ const customSeparator = (
   <div style={{ marginLeft: "16px", marginRight: "16px" }}> - </div>
 );
 
-<OtpInput
-  numOfFields="8"
-  separator={[1, 3, 5]}
-  customSeparator={customSeparator}
-/>;
+<Otp numOfFields="8" separator={[1, 3, 5]} customSeparator={customSeparator} />;
 ```
 
 ## API
@@ -81,4 +77,4 @@ Feel Free to contributing or feature request
 
 ## License
 
-MIT © [Raed Salah](https://github.com/raedsalah)
+MIT © [Raed Salah](https://raedsalah.com)
