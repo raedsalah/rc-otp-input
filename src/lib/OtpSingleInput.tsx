@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef } from "react";
 
 interface SingleOtpProps {
     isInvalid?: boolean;
@@ -11,6 +11,7 @@ interface SingleOtpProps {
     onInput: (e: any) => void;
     separator: boolean;
     customSeparator?: string;
+    placeholder?: string;
     onKeyDown: (e: any) => void;
     onFocus: (e: any) => void;
     onBlur: () => void;
@@ -35,6 +36,7 @@ const SingleOtpInput = ({
     disabled,
     onPaste,
     autoComplete = 'off',
+    placeholder = "",
     ...props
 }: SingleOtpProps) => {
     //input ref
@@ -61,6 +63,7 @@ const SingleOtpInput = ({
                 ref={textInput}
                 disabled={disabled}
                 onPaste={onPaste}
+                placeholder={placeholder}
                 {...props}
             />
             {separator && customSeparator && customSeparator}
