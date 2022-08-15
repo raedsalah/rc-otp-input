@@ -1,29 +1,43 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import * as ReactDOMClient from "react-dom/client";
 
 //styles
-import "./style.css"
+import "./style.css";
 
 //Component
 import OtpInput from "../lib";
+import Sidepanel from "./components/Sidepanel";
 
+//other
 const container = document.getElementById("app");
 const root = ReactDOMClient.createRoot(container!);
 
-const Demo = ({ }) => {
+//interfaces
+interface DemoContextInterface {
+  properties: any;
+  setProperties: any
+}
 
-  const [numOfFields, setNumOfFields] = useState(2)
+export const DemoContext = createContext<DemoContextInterface | any>(null);
+
+const Demo = () => {
+  const [states, setProperties] = useState({
+    numOfFields: 2,
+    defaultValue: "",
+    invalid: false
+  })
+
+  console.log(states.defaultValue);
+
   return (
-    <div className="wrapper">
-      <div className="sidepanel">
-        <label>Number of fields</label>
-        <input type="number" min="2" max="12" value={numOfFields} onChange={e => setNumOfFields(e.target.value)} />
+    <DemoContext.Provider value={{ states, setProperties }}>
+      <div className="wrapper">
+        <Sidepanel />
+        <div className="content-wrapper">
+          <OtpInput defaultValue={states.defaultValue} invalid={states.invalid} numOfFields={states.numOfFields} />
+        </div>
       </div>
-      <div className="content-wrapper">
-
-        <OtpInput numOfFields={numOfFields} />
-      </div>
-    </div>
+    </DemoContext.Provider>
   );
 };
 
