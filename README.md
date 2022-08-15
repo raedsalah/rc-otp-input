@@ -29,11 +29,7 @@ import Otp from "rc-otp-input";
 
 function App() {
   const [OTP, setOTP] = useState("");
-  return (
-    <>
-      <Otp onChange={setOTP} autoFocus numOfFields={4} type="text" />
-    </>
-  );
+  return <Otp onChange={setOTP} autoFocus numOfFields={4} type="text" />;
 }
 ```
 
