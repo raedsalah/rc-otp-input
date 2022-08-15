@@ -15,7 +15,8 @@ interface OtpProps {
   disabled?: boolean;
   type?: "text" | "password";
   defaultValue?: string,
-  testId?: string
+  testId?: string,
+  placeholder?: string
 }
 
 //Constants
@@ -43,6 +44,7 @@ const Otp = ({ invalid,
   type = 'text',
   defaultValue,
   testId = 'otp-test-id',
+  placeholder = "",
   ...props }: OtpProps) => {
   //States
   const [activeInput, setActiveInput] = useState(0);
@@ -173,6 +175,7 @@ const Otp = ({ invalid,
         Array.isArray(separator) && separator
           ? separator.includes(index)
           : false;
+      let placeholdreHandler = placeholder.length > 0 ? placeholder.length === 1 ? placeholder : placeholder.split("")[index] || "" : ''
 
       inputs.push(
         <OtpSingleOtpInput
@@ -195,6 +198,7 @@ const Otp = ({ invalid,
           disabled={disabled}
           type={type}
           onPaste={handleOnPaste}
+          placeholder={placeholdreHandler}
           {...props}
         />
       );
