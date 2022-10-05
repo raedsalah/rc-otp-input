@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #f3f2ef;
 }
 
 .wrapper {
@@ -9,12 +10,13 @@ body {
 
 .sidepanel {
   width: 200px;
-  background-color: #212121;
+  background-color: #fafafa;
   height: calc(100vh - 48px);
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding: 24px;
+  border-right: 1px solid #ddd;
 }
 
 .content-wrapper {

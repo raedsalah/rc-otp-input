@@ -24,17 +24,16 @@ const Demo = () => {
   const [states, setProperties] = useState({
     numOfFields: 2,
     defaultValue: "",
-    invalid: false
+    invalid: false,
+    placeholder: "test"
   })
-
-  console.log(states.defaultValue);
 
   return (
     <DemoContext.Provider value={{ states, setProperties }}>
       <div className="wrapper">
         <Sidepanel />
         <div className="content-wrapper">
-          <OtpInput defaultValue={states.defaultValue} invalid={states.invalid} numOfFields={states.numOfFields} />
+          <OtpInput defaultValue={states.defaultValue} placeholder="pl" invalid={states.invalid} numOfFields={states.numOfFields} />
         </div>
       </div>
     </DemoContext.Provider>
